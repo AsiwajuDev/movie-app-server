@@ -7,9 +7,11 @@ const mongoose = require("mongoose");
 //DB Connection
 const db = require("./Config/Keys").mongoURI;
 
-//Initialize Objects
+//Import Router
+const movieRouter = require("./Routes/Movie-Router");
+
+//Initialize Express Objects
 const app = express();
-const Port = 5000;
 
 //Use Objects to create server
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,5 +28,9 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
+app.use("/api", movieRouter);
 
-app.listen(Port, () => console.log(`Server Running on ${Port}`));
+//Configure Port
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server Running on ${port}`));
