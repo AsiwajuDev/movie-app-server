@@ -1,1 +1,1 @@
-# movie-app-server
+# movie-app
