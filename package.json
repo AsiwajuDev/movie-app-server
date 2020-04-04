@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Backend server for the Movie App",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
   "repository": "https://github.com/AsiwajuDev/movie-app-server.git",
   "author": "asiwajudev <olanrewajuranda@gmail.com>",
   "license": "MIT",
